@@ -1,9 +1,6 @@
 import openpyxl
 
-wb = openpyxl.load_workbook("Stock_Records.xlsx")
+wb = openpyxl.load_workbook('Stock_Records.xlsx')
 
-sheet = wb.active
-
-cell = sheet.cell(row = 1, column = 1)
-
-print(cell)
+sheet = wb.get_sheet_names('Sheet')
+sheet['A1'].value == None

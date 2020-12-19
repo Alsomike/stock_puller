@@ -13,3 +13,11 @@ stockticker = input("what is the ticker? ")
 
 getStock('https://finance.yahoo.com/quote/' + stockticker + '?p=TSLA&.tsrc=fin-srch')
 
+
+import openpyxl as op
+wb = op.load_workbook(filename = 'Stock_Records.xlsx')
+ws = wb['Sheet1']
+
+ws.append(Stock_Ticker)
+
+wb.close
