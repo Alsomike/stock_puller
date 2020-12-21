@@ -1,6 +1,16 @@
-import openpyxl
+import openpyxl as xl
+import time
 
-wb = openpyxl.load_workbook('Stock_Records.xlsx')
+trial_stocks = ['stock1', 'stock2', 'stock3', 'stock4', 'stock5']
+trial_prices = ['price1', 'price2', 'price3', 'price4', 'price5']
 
-sheet = wb.get_sheet_names('Sheet')
-sheet['A1'].value == None
+SR_wb = xl.load_workbook('\\Users\\mpell\\OneDrive\\Documents\\PythonProjects\\Git\\Stock_Records.xlsx')
+SR_Sheet = SR_wb["Sheet"]
+
+SR_Sheet = SR_wb['Sheet']
+now = time.strftime("%x")
+SR_Sheet['A1'].value = now
+
+SR_wb.save('Stock_Records.xlsx')
+
+
